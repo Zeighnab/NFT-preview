@@ -14,6 +14,8 @@
     <title>Frontend Mentor | NFT preview card component</title>
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
       * {
         box-sizing: border-box;
         padding: 0;
@@ -30,6 +32,7 @@
       }
 
       body {
+        font-family: 'Outfit', sans-serif;
         background-color: var(--veryDarkBlue);
         height: 100vh;
         min-height: 1100px;
@@ -38,6 +41,7 @@
       h2 {
         color: var(--white);
         margin-bottom: 1rem;
+        font-weight: 600;
       }
 
       h2:hover {
@@ -123,11 +127,11 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.2rem;
+        font-weight: 400;
       }
 
       .card-plan .eth {
         color: var(--cyan);
-        font-weight: bold;
         font-size: 18px;
       }
 
@@ -166,6 +170,10 @@
         margin-left: 1rem;
         letter-spacing: 0.07rem;
         color: var(--softblue);
+      }
+
+      .footText span {
+        color: var(--white);
       }
 
       .footText span:hover {
