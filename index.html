@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      :root {
+        --softblue: hsl(215, 51%, 70%);
+        --cyan: hsl(178, 100%, 50%);
+        --veryDarkBlue: hsl(217, 54%, 11%);
+        --slightDarkBlue: hsl(216, 50%, 16%);
+        --DarkBlue: hsl(215, 32%, 27%);
+        --white: hsl(0, 0%, 100%);
+      }
+
+      body {
+        background-color: var(--veryDarkBlue);
+        height: 100vh;
+        min-height: 1100px;
+      }
+
+      h2 {
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+
+      h2:hover {
+        color: var(--cyan);
+        cursor: pointer;
+      }
+
+      .container {
+        width: 85vw;
+        margin: 0 auto;
+      }
+
+      .card {
+        background-color: var(--slightDarkBlue);
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-content: start;
+        height: 38rem;
+        width: 20rem;
+        margin: 5rem auto 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .card-img {
+        position: relative;
+        background-color: var(--cyan);
+        width: 18rem;
+        height: 18rem;
+        margin: 1.2rem auto;
+        border-radius: 10px;
+      }
+
+      .card-img img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .card-img .eye img {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .card-img:hover .eye img {
+        opacity: 1;
+      }
+
+      .card-img:hover img {
+        opacity: 0.5;
+      }
+
+      .card-img::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        border-radius: 10px;
+      }
+
+      .card-img:hover::after {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .text {
+        color: var(--softblue);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+      
+      .card-plan {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.2rem;
+      }
+
+      .card-plan .eth {
+        color: var(--cyan);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .card-plan .clock{
+        color: var(--softblue);
+        font-size: 18px;
+      }
+
+      .line {
+        width: inherit;
+        height: 1px;
+        background-color: var(--DarkBlue);
+        margin: 0 auto 1rem;
+      }
+
+      .foot {
+        display: flex;
+        align-items: center;
+      }
+
+      .foot .avatar{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+
+      .foot .avatar img {
+        border: 3px solid var(--white);
+        height: inherit;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .footText {
+        margin-left: 1rem;
+        letter-spacing: 0.07rem;
+        color: var(--softblue);
+      }
+
+      .footText span:hover {
+        color: var(--cyan);
+        cursor: pointer;
+      }
+
+      @media (min-width: 376px) and (max-width: 767px) {
+        h2 {
+          margin-top: 1rem;
+        }
+
+        .card {
+          height: 40rem;
+          width: 23rem;
+        }
+
+        .card-img {
+          width: 20rem;
+          height: 20rem;
+        }
+
+        .card-body {
+          width: 20rem;
+        }
+        
+        .text {
+          margin-bottom: 2rem;
+        }
+
+        .line {
+          width: inherit;
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          width: 25rem;
+          height: 41rem;
+        }
+
+        .card-img {
+          width: 23rem;
+          height: 21rem;
+        }
+
+        .card-body {
+          width: 23rem;
+        }
+
+        .text {
+          margin-top: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .line {
+          width: inherit;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="container">
+        <article class="card">
+          <div class="card-img">
+            <img src="images/image-equilibrium.jpg" alt="" />
+            <div class="eye">
+              <img src="images/icon-view.svg" alt="" />
+            </div>
+          </div>
+          <div class="card-body">
+            <h2>Equilibrium #3429</h2>
+            <p class="text">Our Equilibrium collection promotes balance and calm.</p>
+            <div class="card-plan">
+              <p class="eth">
+                <img src="images/icon-ethereum.svg" alt="">
+                0.041 ETH
+              </p>
+              <p class="clock"> 
+                <img src="images/icon-clock.svg" alt="">
+                3 days left
+              </p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="foot">
+              <div class="avatar">
+                <img src="images/image-avatar.png" alt="" />
+              </div>
+              <p class="footText">Creation of <span>Jules Wyvern</span></p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Zeighnab</a>.
+    </div>
+  </body>
+</html>
